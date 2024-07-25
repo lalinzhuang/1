@@ -109,23 +109,3 @@ for frame_idx in range(0, 10):
     mlab.savefig(f"output/xz_view_{frame_idx}.png")
 
 mlab.show()
-
-
-# Create some data
-import numpy as np
-
-x, y = np.mgrid[-10:10:200j, -10:10:200j]
-z = 100 * np.sin(x * y) / (x * y)
-
-# Visualize it with mlab.surf
-from mayavi import mlab
-mlab.figure(bgcolor=(1, 1, 1))
-surf = mlab.surf(z, colormap='cool')
-
-
-
-# We need to force update of the figure now that we have changed the LUT.
-mlab.draw()
-mlab.view(40, 85)
-
-mlab.show()
